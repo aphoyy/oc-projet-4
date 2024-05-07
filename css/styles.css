@@ -97,7 +97,6 @@ p {
 }
 .steps__content {
   color: #222222;
-  max-width: 335px;
   padding: 28px 28px 28px 0;
   margin-top: 25px;
   border-radius: 20px;
@@ -142,6 +141,7 @@ p {
 }
 
 .card {
+  position: relative;
   height: 251px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
   border-radius: 15px;
@@ -151,20 +151,19 @@ p {
   width: 100%;
   height: 174px;
   border-radius: 15px 15px 0 0;
+  object-fit: cover;
 }
 .card__new {
-  width: 80px;
-  height: 29px;
   padding: 7px 9px;
   font-size: 14px;
   font-weight: 500;
   color: #008766;
   background-color: #99E2D0;
-  position: relative;
-  bottom: 88%;
-  left: 64%;
-  z-index: 2;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  z-index: 2;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 .card__title {
   font-size: 18px;
@@ -177,15 +176,9 @@ p {
   margin: 5px 0 0 13px;
 }
 .card__favorite {
-  position: relative;
-  left: 85%;
-  bottom: 16%;
-}
-.card__favorite--purple {
-  position: relative;
-  left: 85%;
-  bottom: 16%;
-  fill: red;
+  position: absolute;
+  right: 25px;
+  bottom: 33px;
 }
 
 /*#endregion */
