@@ -112,15 +112,29 @@ p {
         border-radius: 20px;
         background-color: $light-gray-background;
         box-shadow: 0px 4px 15px 0px #00000026;
+        display: flex;
+        align-items: center;
+    }
+    &__number {
+        display: inline-block;
+        position: relative;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        line-height: 24px;
+        text-align: center;
+        color: $white;
+        background-color: $purple;
+        border-radius: 50%;
     }
     &__logo {
-        width: 18px;
-        height: 20px;
+        font-size: 18px;
         margin-right: 18px;
         color: $gray;
+        line-height: px;
         &--purple {
-            width: 18px;
-            height: 18px;
+            font-size: 18px;
             margin-right: 18px;
             color: $purple;
         }
@@ -132,6 +146,9 @@ p {
 .restaurants {
     padding: 54px 20px 66px 20px;
     background-color: $light-gray-background;
+    &__title {
+        margin-bottom: 20px;
+    }
 }
 
 .card {
@@ -154,6 +171,17 @@ p {
         font-weight: 300;
         margin: 5px 0 0 13px;
     }
+    &__favorite {
+        position: relative;
+        left: 85%;
+        bottom: 16%;
+        &--purple {
+            position: relative;
+            left: 85%;
+            bottom: 16%;
+            fill: red;
+        }
+    }
 }
 /*#endregion */
 
@@ -166,10 +194,13 @@ p {
         width: 120px;
         height: 27px;
         margin-bottom: 9px;
-        object-fit:initial;
+        filter: invert(99%) sepia(0%) saturate(0%) hue-rotate(225deg) brightness(108%) contrast(100%)
     }
     &__text {
         margin-top: 7px;
+    }
+    &__logo {
+        width: 20px;
     }
 }
 /*#endregion */
