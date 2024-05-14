@@ -43,6 +43,19 @@ a {
   height: 36px;
   padding-top: 8px;
 }
+.header__link {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 17px;
+  top: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__arrow {
+  color: #353535;
+}
 
 .location {
   height: 50px;
@@ -126,7 +139,6 @@ a {
   font-size: 18px;
   margin-right: 18px;
   color: #7E7E7E;
-  line-height: px;
 }
 .steps__logo--purple {
   font-size: 18px;
@@ -150,6 +162,10 @@ a {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
   border-radius: 15px;
   margin-top: 18px;
+}
+.card__content {
+  width: 100%;
+  height: 100%;
 }
 .card__img {
   width: 100%;
@@ -179,23 +195,27 @@ a {
   font-weight: 300;
   margin: 5px 0 0 13px;
 }
-.card__checkbox {
+
+.like {
+  cursor: pointer;
+}
+.like__checkbox {
   display: none;
 }
-.card__checkbox:checked + .card__label > .card__favorite {
+.like__checkbox:checked ~ .like__heart {
   opacity: 0;
 }
-.card__checkbox:checked + .card__label > .card__favorite--purple {
+.like__checkbox:checked ~ .like__heart--purple {
   opacity: 1;
 }
-.card__favorite {
+.like__heart {
   z-index: 2;
   position: absolute;
   right: 25px;
   bottom: 40px;
   transition: opacity 300ms;
 }
-.card__favorite--purple {
+.like__heart--purple {
   z-index: 1;
   position: absolute;
   right: 25px;
@@ -203,7 +223,7 @@ a {
   opacity: 0;
   transition: opacity 300ms;
 }
-.card__favorite--purple::before {
+.like__heart--purple::before {
   color: transparent;
   position: relative;
   background-clip: text;
@@ -245,16 +265,28 @@ a {
 .menu {
   position: relative;
   top: 220px;
-  padding: 32px 17px 17px 17px;
-  border-radius: 45px;
+  margin-bottom: 220px;
+  padding: 32px 17px 0 17px;
+  border-radius: 45px 45px 0 0;
   z-index: 1;
   background-color: #F6F6F6;
 }
 .menu__title {
+  font-family: "Shrikhand", sans-serif;
   font-size: 28px;
   font-weight: 400;
-  font-style: italic;
   margin-bottom: 40px;
+}
+.menu__button {
+  width: 60%;
+  height: 50px;
+  margin: 40px 20%;
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  background: linear-gradient(-3.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
 }
 
 .category__title {
@@ -263,8 +295,9 @@ a {
   margin-top: 40px;
 }
 .category__bar {
-  width: 50px;
+  width: 40px;
   border-bottom: 3px solid #99E2D0;
+  margin-top: 3px;
 }
 
 .food {
@@ -273,6 +306,7 @@ a {
   padding: 15px;
   border-radius: 15px;
   background-color: #FFFFFF;
+  box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1019607843);
 }
 .food__title {
   font-size: 18px;
@@ -281,13 +315,20 @@ a {
 .food__description {
   font-size: 16px;
   font-weight: 300;
+  width: 90%;
 }
 .food__price {
   font-size: 15px;
   font-weight: 700;
+  color: #353535;
   position: absolute;
   bottom: 15px;
   right: 15px;
+}
+
+.menu .like__heart, .menu .like__heart--purple {
+  top: 50px;
+  right: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */

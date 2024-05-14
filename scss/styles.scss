@@ -53,6 +53,19 @@ a {
         height: 36px;
         padding-top: 8px;
     }
+    &__link {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 17px;
+        top: 17px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__arrow {
+        color: $footer-background;
+    }
 }
 
 .location {
@@ -136,7 +149,6 @@ a {
         font-size: 18px;
         margin-right: 18px;
         color: $gray;
-        line-height: px;
         &--purple {
             font-size: 18px;
             margin-right: 18px;
@@ -161,6 +173,10 @@ a {
     box-shadow: 0px 4px 15px 0px #0000001A;
     border-radius: 15px;
     margin-top: 18px;
+    &__content {
+        width: 100%;
+        height: 100%;
+    }
     &__img {
         width: 100%;
         height: 174px; //174px
@@ -189,16 +205,20 @@ a {
         font-weight: 300;
         margin: 5px 0 0 13px;
     }
+}
+
+.like {
+    cursor: pointer;
     &__checkbox {
         display: none;
-        &:checked + .card__label > .card__favorite {
+        &:checked ~ .like__heart {
             opacity: 0;
         }
-        &:checked + .card__label > .card__favorite--purple {
+        &:checked ~ .like__heart--purple {
             opacity: 1;
         }
     }
-    &__favorite {
+    &__heart {
         z-index: 2;
         position: absolute;
         right: 25px;
@@ -257,15 +277,27 @@ a {
 .menu {
     position: relative;
     top: 220px;
-    padding: 32px 17px 17px 17px;
-    border-radius: 45px;
+    margin-bottom: 220px;
+    padding: 32px 17px 0 17px;
+    border-radius: 45px 45px 0 0;
     z-index: 1;
     background-color: $light-gray-background;
     &__title {
+        font-family: 'Shrikhand', sans-serif;
         font-size: 28px;
         font-weight: 400;
-        font-style: italic;
         margin-bottom: 40px;
+    }
+    &__button {
+        width: 60%;
+        height: 50px;
+        margin: 40px 20%;
+        border-radius: 25px;
+        box-shadow: 0px 4px 10px 0px #00000040;
+        background: linear-gradient(-3.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+        font-size: 16px;
+        font-weight: 500;
+        color: $white;
     }
 }
 
@@ -276,8 +308,9 @@ a {
         margin-top: 40px;
     }
     &__bar {
-        width: 50px;
+        width: 40px;
         border-bottom: 3px solid $green;
+        margin-top: 3px;
     }
 }
 
@@ -287,6 +320,7 @@ a {
     padding: 15px;
     border-radius: 15px;
     background-color: $white;
+    box-shadow: 0px 4.01px 15.04px 0px #0000001A;
     &__title {
         font-size: 18px;
         font-weight: 500;
@@ -294,12 +328,21 @@ a {
     &__description {
         font-size: 16px;
         font-weight: 300;
+        width: 90%;
     }
     &__price {
         font-size: 15px;
         font-weight: 700;
+        color: $footer-background;
         position: absolute;
         bottom: 15px;
         right: 15px;
+    }
+}
+
+.menu .like {
+    &__heart, &__heart--purple {
+        top: 50px;
+        right: 20px;
     }
 }
