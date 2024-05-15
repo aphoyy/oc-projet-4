@@ -280,7 +280,6 @@ a {
     margin-bottom: 220px;
     padding: 32px 17px 0 17px;
     border-radius: 45px 45px 0 0;
-    z-index: 1;
     background-color: $light-gray-background;
     &__title {
         font-family: 'Shrikhand', sans-serif;
@@ -315,20 +314,66 @@ a {
 }
 
 .food {
-    margin-top: 12px;
     position: relative;
-    padding: 15px;
+    margin-top: 12px;
     border-radius: 15px;
     background-color: $white;
     box-shadow: 0px 4.01px 15.04px 0px #0000001A;
+    overflow: hidden;
+    &__content {
+        padding: 15px;
+    }
+    &__checkbox {
+        display: none;
+        &:checked ~ .food__slider {
+            transform: translateX(-59px);
+        }
+        &:checked ~ .food__price {
+            transform: translateX(-59px);
+        }
+        &:checked ~ .food__title > .food__title--min {
+            opacity: 1;
+        }
+        &:checked ~ .food__title  > .food__title--max {
+            opacity: 0;
+        }
+        &:checked ~ .food__description > .food__description--min {
+            opacity: 1;
+        }
+        &:checked ~ .food__description > .food__description--max {
+            opacity: 0;
+        }
+    }
     &__title {
         font-size: 18px;
         font-weight: 500;
+        &--min {
+            opacity: 0;
+            margin-left: -3.5px;
+            transition: opacity 300ms;
+        }
+        &--max {
+            position: relative;
+            right: 15px;
+            opacity: 1;
+            transition: opacity 300ms;
+        }
     }
     &__description {
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 300;
-        width: 90%;
+        width: 95%;
+        &--min {
+            opacity: 0;
+            margin-left: -3.5px;
+            transition: opacity 300ms;
+        }
+        &--max {
+            position: relative;
+            right: 11px;
+            opacity: 1;
+            transition: opacity 300ms;
+        }
     }
     &__price {
         font-size: 15px;
@@ -337,12 +382,46 @@ a {
         position: absolute;
         bottom: 15px;
         right: 15px;
+        transition: transform 300ms ease-in-out;
+        transform-origin: right;
+    }
+    &__slider {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 59px;
+        height: 100%;
+        margin-right: -59px;
+        border-radius: 0 15px 15px 0;
+        background-color: $green;
+        transition: transform 300ms ease-in-out;
+        transform-origin: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__checkmark {
+        width: 20px;
+        height: 20px;
+        color: $green;
+        background-color: $white;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 20px !important; // Override font awesome default line height
     }
 }
 
 .menu .like {
-    &__heart, &__heart--purple {
-        top: 50px;
-        right: 20px;
+    display: inline-flex;
+    width: 32px;
+    position: static;
+    margin-left: 24px;
+    &__heart {
+        position: static;
+    }
+    &__heart--purple {
+        position: relative;
+        bottom: 0;
+        right: 28px;
     }
 }

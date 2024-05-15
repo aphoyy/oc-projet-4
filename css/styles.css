@@ -268,7 +268,6 @@ a {
   margin-bottom: 220px;
   padding: 32px 17px 0 17px;
   border-radius: 45px 45px 0 0;
-  z-index: 1;
   background-color: #F6F6F6;
 }
 .menu__title {
@@ -301,21 +300,67 @@ a {
 }
 
 .food {
-  margin-top: 12px;
   position: relative;
-  padding: 15px;
+  margin-top: 12px;
   border-radius: 15px;
   background-color: #FFFFFF;
   box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1019607843);
+  overflow: hidden;
+}
+.food__content {
+  padding: 15px;
+}
+.food__checkbox {
+  display: none;
+}
+.food__checkbox:checked ~ .food__slider {
+  transform: translateX(-59px);
+}
+.food__checkbox:checked ~ .food__price {
+  transform: translateX(-59px);
+}
+.food__checkbox:checked ~ .food__title > .food__title--min {
+  opacity: 1;
+}
+.food__checkbox:checked ~ .food__title > .food__title--max {
+  opacity: 0;
+}
+.food__checkbox:checked ~ .food__description > .food__description--min {
+  opacity: 1;
+}
+.food__checkbox:checked ~ .food__description > .food__description--max {
+  opacity: 0;
 }
 .food__title {
   font-size: 18px;
   font-weight: 500;
 }
+.food__title--min {
+  opacity: 0;
+  margin-left: -3.5px;
+  transition: opacity 300ms;
+}
+.food__title--max {
+  position: relative;
+  right: 15px;
+  opacity: 1;
+  transition: opacity 300ms;
+}
 .food__description {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
-  width: 90%;
+  width: 95%;
+}
+.food__description--min {
+  opacity: 0;
+  margin-left: -3.5px;
+  transition: opacity 300ms;
+}
+.food__description--max {
+  position: relative;
+  right: 11px;
+  opacity: 1;
+  transition: opacity 300ms;
 }
 .food__price {
   font-size: 15px;
@@ -324,11 +369,47 @@ a {
   position: absolute;
   bottom: 15px;
   right: 15px;
+  transition: transform 300ms ease-in-out;
+  transform-origin: right;
+}
+.food__slider {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 59px;
+  height: 100%;
+  margin-right: -59px;
+  border-radius: 0 15px 15px 0;
+  background-color: #99E2D0;
+  transition: transform 300ms ease-in-out;
+  transform-origin: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.food__checkmark {
+  width: 20px;
+  height: 20px;
+  color: #99E2D0;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 20px !important;
 }
 
-.menu .like__heart, .menu .like__heart--purple {
-  top: 50px;
-  right: 20px;
+.menu .like {
+  display: inline-flex;
+  width: 32px;
+  position: static;
+  margin-left: 24px;
+}
+.menu .like__heart {
+  position: static;
+}
+.menu .like__heart--purple {
+  position: relative;
+  bottom: 0;
+  right: 28px;
 }
 
 /*# sourceMappingURL=styles.css.map */
