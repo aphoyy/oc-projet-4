@@ -47,8 +47,8 @@ a {
   position: absolute;
   width: 30px;
   height: 30px;
-  left: 17px;
-  top: 17px;
+  left: 1%;
+  top: 36%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -266,7 +266,7 @@ a {
   position: relative;
   top: 220px;
   margin-bottom: 220px;
-  padding: 32px 17px 0 17px;
+  padding: 32px 13px 0 13px;
   border-radius: 45px 45px 0 0;
   background-color: #F6F6F6;
 }
@@ -410,6 +410,66 @@ a {
   position: relative;
   bottom: 0;
   right: 28px;
+}
+
+@media (min-width: 1440px) {
+  .header {
+    height: 96px;
+    box-shadow: none;
+  }
+  .location {
+    box-shadow: none;
+  }
+  .discovery__title {
+    font-size: 40px;
+  }
+  .steps {
+    width: 75%;
+    padding: 50px 0;
+  }
+  .steps__list {
+    display: flex;
+  }
+  .steps__content + .steps__content {
+    margin-left: 30px;
+  }
+  .steps__content {
+    width: 100%;
+  }
+  .restaurants {
+    padding: 30px 0;
+  }
+  .restaurants__title, .restaurants__content {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .restaurants__title {
+    margin-bottom: 30px;
+  }
+  .restaurants__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .card {
+    margin-top: 0;
+    width: 46%;
+  }
+  .menu {
+    width: 72%;
+    margin: 0 auto 220px auto;
+  }
+  .menu__title {
+    width: 62%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 19px;
+  }
+  .category {
+    width: 62%;
+    margin: 0 auto;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
