@@ -12,6 +12,7 @@
 body {
   width: 100%;
   height: auto;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -27,6 +28,21 @@ p {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.load-container {
+  animation: loading-hidden 0ms both 1480ms;
+}
+
+.loader {
+  position: absolute;
+  top: 48vh;
+  left: 48vw;
+}
+.loader__logo {
+  font-size: 50px;
+  color: #9356DC;
+  animation: loading-animation 1500ms both;
 }
 
 /*#region Header and location */
@@ -535,6 +551,28 @@ a {
   }
   to {
     transform: translateX(0);
+  }
+}
+@keyframes loading-hidden {
+  from {
+    transform: translateX(9999px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes loading-animation {
+  0% {
+    transform: rotate(0);
+  }
+  98% {
+    transform: rotate(2turn);
+  }
+  99% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(9999px);
   }
 }
 
