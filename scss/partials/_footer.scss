@@ -1,0 +1,20 @@
+@use './variables';
+
+.footer {
+    color: variables.$white;
+    background-color: variables.$footer-background;
+    padding: 22px 25px;
+    &__img {
+        width: 120px;
+        height: 27px;
+        margin-bottom: 9px;
+        filter: invert(99%) sepia(0%) saturate(0%) hue-rotate(225deg) brightness(108%) contrast(100%)
+    }
+    &__text {
+        margin-top: 7px;
+    }
+    &__logo {
+        font-size: 13px;
+        width: 17px;
+    }
+}

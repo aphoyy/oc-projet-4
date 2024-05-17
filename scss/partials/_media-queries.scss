@@ -1,0 +1,125 @@
+@media (min-width: 1440px) {
+    .header {
+        height: 96px;
+        box-shadow: none;
+        &__link {
+            top: 36%;
+        }
+    }
+
+    .location {
+        box-shadow: none;
+    }
+
+    .discovery__title {
+        font-size: 40px;
+    }
+
+    .steps {
+        width: 75%;
+        padding: 50px 0;
+        &__list {
+            display: flex;
+        }
+        &__content + &__content {
+            margin-left: 30px;
+        }
+        &__content {
+            width: 100%;
+        }
+    }
+
+    .restaurants {
+        padding: 30px 0;
+        &__title, &__content {
+            width: 75%;
+            margin: 0 auto;
+        }
+        &__title {
+            margin-bottom: 30px;
+        }
+        &__content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+    }
+
+    .card {
+        margin-top: 0;
+        width: 46%;
+    }
+
+    .menu {
+        width: 72%;
+        margin: 0 auto 220px auto;
+        &__title {
+            width: 62%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 19px;
+        }
+    }
+
+    .category {
+        width: 62%;
+        margin: 0 auto;
+    }
+
+    .food__checkbox {
+        &:hover ~ .food__slider {
+            transform: translateX(-59px);
+        }
+        &:hover ~ .food__price {
+            transform: translateX(-59px);
+        }
+        &:hover ~ .food__title {
+            width: 68%;
+        }
+        &:hover ~ .food__description {
+            width: 68%;
+        }
+    }
+
+    .footer {
+        display: flex;
+        justify-content: right;
+        align-items: flex-end;
+        padding: 64px 0 31px 0;
+        &__text {
+            margin-left: 40px;
+            margin-top: 0;
+        }
+        &__img {
+            order: 5;
+            margin: 0 35px 0 60px;
+        }
+    }
+}
+
+@media (max-width: 1439px) {
+    .food__checkbox {
+        &:checked ~ .food__slider {
+            transform: translateX(-59px);
+        }
+        &:checked ~ .food__price {
+            transform: translateX(-59px);
+        }
+        &:checked ~ .food__title {
+            width: 68%;
+        }
+        &:checked ~ .food__description {
+            width: 68%;
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .menu__title {
+        font-size: 25px;
+    }
+    .menu .like__heart--purple {
+        right: 25px;
+    }
+}

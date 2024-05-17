@@ -1,0 +1,105 @@
+@use './partials/variables';
+@use './partials/header';
+@use './partials/footer';
+@use './partials/landing-page';
+@use './partials/menu-page';
+@use './partials/media-queries';
+@use './partials/animations';
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.load-container {
+    animation: loading-hidden 0ms both 1480ms;
+}
+
+.loader {
+    position: absolute;
+    top: 48vh;
+    left: 48vw;
+    &__logo {
+        font-size: 50px;
+        color: variables.$main-color;
+        animation: loading-animation 1500ms both;
+    }
+}
+
+.button {
+    padding: 13px 19px;
+    border-radius: 25px;
+    box-shadow: 0px 4px 10px 0px #00000040;
+    background: linear-gradient(-3.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    font-size: 16px;
+    font-weight: 500;
+    color: variables.$white;
+    opacity: 1;
+    transition: opacity 150ms ease-in-out, box-shadow 150ms ease-in-out;
+    &:hover {
+        box-shadow: 0px 4px 15px 0px #00000059;
+        opacity: 0.85;
+    }
+}
+
+.like {
+    cursor: pointer;
+    &__checkbox {
+        display: none;
+        &:checked ~ .like__heart {
+            opacity: 0;
+        }
+        &:checked ~ .like__heart--purple {
+            opacity: 1;
+        }
+    }
+    &__heart {
+        z-index: 2;
+        position: absolute;
+        right: 25px;
+        bottom: 40px;
+        transition: opacity 300ms;
+        &--purple {
+            z-index: 1;
+            position: absolute;
+            right: 25px;
+            bottom: 40px;
+            opacity: 0;
+            transition: opacity 300ms;
+            &::before {
+                color: transparent;
+                position: relative;
+                background-clip: text;
+                -webkit-background-clip: text;
+                background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+            }
+        }
+    }
+}

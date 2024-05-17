@@ -1,0 +1,32 @@
+@keyframes food-slide {
+    from {
+        transform: translateX(150%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes loading-hidden {
+    from {
+        transform: translateX(9999px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes loading-animation {
+    0% {
+        transform: rotate(0);
+    }
+    98% {
+        transform: rotate(2turn);
+    }
+    99% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(9999px);
+    }
+}
