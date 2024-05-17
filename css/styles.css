@@ -1,3 +1,4 @@
+/*#region General */
 *, *::after, *::before {
   margin: 0;
   padding: 0;
@@ -45,6 +46,60 @@ a {
   animation: loading-animation 1500ms both;
 }
 
+/*#endregion */
+/*#region Components */
+.button {
+  padding: 13px 19px;
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  background: linear-gradient(-3.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  opacity: 1;
+  transition: opacity 150ms ease-in-out, box-shadow 150ms ease-in-out;
+}
+.button:hover {
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
+  opacity: 0.85;
+}
+
+.like {
+  cursor: pointer;
+}
+.like__checkbox {
+  display: none;
+}
+.like__checkbox:checked ~ .like__heart {
+  opacity: 0;
+}
+.like__checkbox:checked ~ .like__heart--purple {
+  opacity: 1;
+}
+.like__heart {
+  z-index: 2;
+  position: absolute;
+  right: 25px;
+  bottom: 40px;
+  transition: opacity 300ms;
+}
+.like__heart--purple {
+  z-index: 1;
+  position: absolute;
+  right: 25px;
+  bottom: 40px;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.like__heart--purple::before {
+  color: transparent;
+  position: relative;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+}
+
+/*#endregion */
 /*#region Header and location */
 .header {
   height: 63px;
@@ -202,41 +257,6 @@ a {
   margin: 5px 0 0 13px;
 }
 
-.like {
-  cursor: pointer;
-}
-.like__checkbox {
-  display: none;
-}
-.like__checkbox:checked ~ .like__heart {
-  opacity: 0;
-}
-.like__checkbox:checked ~ .like__heart--purple {
-  opacity: 1;
-}
-.like__heart {
-  z-index: 2;
-  position: absolute;
-  right: 25px;
-  bottom: 40px;
-  transition: opacity 300ms;
-}
-.like__heart--purple {
-  z-index: 1;
-  position: absolute;
-  right: 25px;
-  bottom: 40px;
-  opacity: 0;
-  transition: opacity 300ms;
-}
-.like__heart--purple::before {
-  color: transparent;
-  position: relative;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-}
-
 /*#endregion */
 /*#region Footer */
 .footer {
@@ -259,7 +279,7 @@ a {
 }
 
 /*#endregion */
-/* Restaurant page */
+/*#region Menu page */
 .background-image {
   width: 100%;
   height: 275px;
@@ -294,6 +314,20 @@ a {
   width: 186px;
   padding: 13px 50px;
 }
+.menu .like {
+  display: inline-flex;
+  width: 32px;
+  position: static;
+  margin-left: 24px;
+}
+.menu .like__heart {
+  position: static;
+}
+.menu .like__heart--purple {
+  position: relative;
+  bottom: 0;
+  right: 28px;
+}
 
 .category__title {
   font-size: 16px;
@@ -313,37 +347,37 @@ a {
   background-color: #FFFFFF;
   box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1019607843);
   overflow: hidden;
-  animation: food-slide 325ms cubic-bezier(0, 0.84, 0.99, 0.94) both;
+  animation: food-slide 265ms cubic-bezier(0, 0.8, 0.37, 0.75) both;
 }
 .food--1 {
-  animation-delay: 325ms;
+  animation-delay: 265ms;
 }
 .food--2 {
-  animation-delay: 650ms;
+  animation-delay: 530ms;
 }
 .food--3 {
-  animation-delay: 975ms;
+  animation-delay: 795ms;
 }
 .food--4 {
-  animation-delay: 1300ms;
+  animation-delay: 1060ms;
 }
 .food--5 {
-  animation-delay: 1625ms;
+  animation-delay: 1325ms;
 }
 .food--6 {
-  animation-delay: 1950ms;
+  animation-delay: 1590ms;
 }
 .food--7 {
-  animation-delay: 2275ms;
+  animation-delay: 1855ms;
 }
 .food--8 {
-  animation-delay: 2600ms;
+  animation-delay: 2120ms;
 }
 .food--9 {
-  animation-delay: 2925ms;
+  animation-delay: 2385ms;
 }
 .food--10 {
-  animation-delay: 3250ms;
+  animation-delay: 2650ms;
 }
 .food__content {
   padding: 15px;
@@ -404,37 +438,8 @@ a {
   line-height: 20px !important;
 }
 
-.menu .like {
-  display: inline-flex;
-  width: 32px;
-  position: static;
-  margin-left: 24px;
-}
-.menu .like__heart {
-  position: static;
-}
-.menu .like__heart--purple {
-  position: relative;
-  bottom: 0;
-  right: 28px;
-}
-
-.button {
-  padding: 13px 19px;
-  border-radius: 25px;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
-  background: linear-gradient(-3.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  font-size: 16px;
-  font-weight: 500;
-  color: #FFFFFF;
-  opacity: 1;
-  transition: opacity 150ms ease-in-out, box-shadow 150ms ease-in-out;
-}
-.button:hover {
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
-  opacity: 0.85;
-}
-
+/*#endregion */
+/*#region Media queries */
 @media (min-width: 1440px) {
   .header {
     height: 96px;
@@ -523,14 +528,6 @@ a {
     margin: 0 35px 0 60px;
   }
 }
-@media (max-width: 350px) {
-  .menu__title {
-    font-size: 25px;
-  }
-  .menu .like__heart--purple {
-    right: 25px;
-  }
-}
 @media (max-width: 1439px) {
   .food__checkbox:checked ~ .food__slider {
     transform: translateX(-59px);
@@ -545,6 +542,16 @@ a {
     width: 68%;
   }
 }
+@media (max-width: 350px) {
+  .menu__title {
+    font-size: 25px;
+  }
+  .menu .like__heart--purple {
+    right: 25px;
+  }
+}
+/*#endregion */
+/*#region Keyframes */
 @keyframes food-slide {
   from {
     transform: translateX(150%);
@@ -575,5 +582,6 @@ a {
     transform: translateX(9999px);
   }
 }
+/*#endregion */
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,3 +1,4 @@
+/*#region General */
 // Colors
 $location-background: #EAEAEA;
 $light-gray-background: #F6F6F6;
@@ -8,7 +9,8 @@ $purple: #9356DC;
 $gray: #7E7E7E;
 $green: #99E2D0;
 
-$food-delay: 325ms;
+// Animation variable
+$food-delay: 265ms;
 $food-max: 10;
 
 // General
@@ -58,6 +60,60 @@ a {
         animation: loading-animation 1500ms both;
     }
 }
+/*#endregion */
+
+/*#region Components */
+.button {
+    padding: 13px 19px;
+    border-radius: 25px;
+    box-shadow: 0px 4px 10px 0px #00000040;
+    background: linear-gradient(-3.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    font-size: 16px;
+    font-weight: 500;
+    color: $white;
+    opacity: 1;
+    transition: opacity 150ms ease-in-out, box-shadow 150ms ease-in-out;
+    &:hover {
+        box-shadow: 0px 4px 15px 0px #00000059;
+        opacity: 0.85;
+    }
+}
+
+.like {
+    cursor: pointer;
+    &__checkbox {
+        display: none;
+        &:checked ~ .like__heart {
+            opacity: 0;
+        }
+        &:checked ~ .like__heart--purple {
+            opacity: 1;
+        }
+    }
+    &__heart {
+        z-index: 2;
+        position: absolute;
+        right: 25px;
+        bottom: 40px;
+        transition: opacity 300ms;
+        &--purple {
+            z-index: 1;
+            position: absolute;
+            right: 25px;
+            bottom: 40px;
+            opacity: 0;
+            transition: opacity 300ms;
+            &::before {
+                color: transparent;
+                position: relative;
+                background-clip: text;
+                -webkit-background-clip: text;
+                background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+            }
+        }
+    }
+}
+/*#endregion */
 
 /*#region Header and location */
 .header {
@@ -215,41 +271,6 @@ a {
         margin: 5px 0 0 13px;
     }
 }
-
-.like {
-    cursor: pointer;
-    &__checkbox {
-        display: none;
-        &:checked ~ .like__heart {
-            opacity: 0;
-        }
-        &:checked ~ .like__heart--purple {
-            opacity: 1;
-        }
-    }
-    &__heart {
-        z-index: 2;
-        position: absolute;
-        right: 25px;
-        bottom: 40px;
-        transition: opacity 300ms;
-        &--purple {
-            z-index: 1;
-            position: absolute;
-            right: 25px;
-            bottom: 40px;
-            opacity: 0;
-            transition: opacity 300ms;
-            &::before {
-                color: transparent;
-                position: relative;
-                background-clip: text;
-                -webkit-background-clip: text;
-                background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-            }
-        }
-    }
-}
 /*#endregion */
 
 /*#region Footer */
@@ -273,8 +294,7 @@ a {
 }
 /*#endregion */
 
-/* Restaurant page */
-
+/*#region Menu page */
 .background-image {
     width: 100%;
     height: 275px;
@@ -309,6 +329,20 @@ a {
             padding: 13px 50px;
         }
     }
+    .like {
+        display: inline-flex;
+        width: 32px;
+        position: static;
+        margin-left: 24px;
+        &__heart {
+            position: static;
+        }
+        &__heart--purple {
+            position: relative;
+            bottom: 0;
+            right: 28px;
+        }
+    }
 }
 
 .category {
@@ -331,7 +365,7 @@ a {
     background-color: $white;
     box-shadow: 0px 4.01px 15.04px 0px #0000001A;
     overflow: hidden;
-    animation: food-slide $food-delay cubic-bezier(0,.84,.99,.94) both;
+    animation: food-slide $food-delay cubic-bezier(0,.8,.37,.75) both;
     @for $i from 1 through $food-max {
         &--#{$i} {
             animation-delay: $food-delay * $i;
@@ -397,38 +431,9 @@ a {
         line-height: 20px !important; // Override font awesome default line height
     }
 }
+/*#endregion */
 
-.menu .like {
-    display: inline-flex;
-    width: 32px;
-    position: static;
-    margin-left: 24px;
-    &__heart {
-        position: static;
-    }
-    &__heart--purple {
-        position: relative;
-        bottom: 0;
-        right: 28px;
-    }
-}
-
-.button {
-    padding: 13px 19px;
-    border-radius: 25px;
-    box-shadow: 0px 4px 10px 0px #00000040;
-    background: linear-gradient(-3.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-    font-size: 16px;
-    font-weight: 500;
-    color: $white;
-    opacity: 1;
-    transition: opacity 150ms ease-in-out, box-shadow 150ms ease-in-out;
-    &:hover {
-        box-shadow: 0px 4px 15px 0px #00000059;
-        opacity: 0.85;
-    }
-}
-
+/*#region Media queries */
 @media (min-width: 1440px) {
     .header {
         height: 96px;
@@ -529,15 +534,6 @@ a {
     }
 }
 
-@media (max-width: 350px) {
-    .menu__title {
-        font-size: 25px;
-    }
-    .menu .like__heart--purple {
-        right: 25px;
-    }
-}
-
 @media (max-width: 1439px) {
     .food__checkbox {
         &:checked ~ .food__slider {
@@ -553,22 +549,19 @@ a {
             width: 68%;
         }
     }
-    // .food__checkbox {
-    //     &:hover ~ .food__slider {
-    //         transform: translateX(-59px);
-    //     }
-    //     &:hover ~ .food__price {
-    //         transform: translateX(-59px);
-    //     }
-    //     &:hover ~ .food__title {
-    //         width: 68%;
-    //     }
-    //     &:hover ~ .food__description {
-    //         width: 68%;
-    //     }
-    // }
 }
 
+@media (max-width: 350px) {
+    .menu__title {
+        font-size: 25px;
+    }
+    .menu .like__heart--purple {
+        right: 25px;
+    }
+}
+/*#endregion */
+
+/*#region Keyframes */
 @keyframes food-slide {
     from {
         transform: translateX(150%);
@@ -601,3 +594,4 @@ a {
         transform: translateX(9999px);
     }
 }
+/*#endregion */
