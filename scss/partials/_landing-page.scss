@@ -1,5 +1,21 @@
 @use './variables';
 
+/* Loader */
+.load-container {
+    animation: loading-hidden 0ms both 1480ms;
+}
+
+.loader {
+    position: absolute;
+    top: 48vh;
+    left: 48vw;
+    &__logo {
+        font-size: 50px;
+        color: variables.$main-color;
+        animation: loading-animation 1500ms both;
+    }
+}
+
 /* Discovery */
 .discovery {
     padding: 39px 0 60px 0;

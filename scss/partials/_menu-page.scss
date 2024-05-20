@@ -22,6 +22,7 @@
         font-size: 28px;
         font-weight: 400;
         margin-bottom: 40px;
+        margin-left: 5px;
     }
     &__button {
         margin: 40px auto 0 auto;
@@ -68,6 +69,7 @@
 /* Food */
 .food {
     position: relative;
+    padding: 15px;
     margin-top: 12px;
     border-radius: 15px;
     background-color: variables.$white;
@@ -79,12 +81,27 @@
             animation-delay: variables.$food-delay * $i;
         }
     }
-    &__content {
-        padding: 15px;
-    }
     &__checkbox {
         display: none;
-
+        &:checked ~ .food__slider {
+            transform: translateX(-59px);
+        }
+        &:checked ~ .food__price {
+            transform: translateX(-59px);
+        }
+        &:checked ~ .food__title {
+            width: 68%;
+        }
+        &:checked ~ .food__description {
+            width: 68%;
+        }
+    }
+    &__label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
     &__title {
         font-size: 18px;

@@ -51,9 +51,14 @@
         width: 46%;
     }
 
+    .background-image {
+        height: 383px;
+    }
+
     .menu {
         width: 72%;
-        margin: 0 auto 220px auto;
+        margin: 0 auto 338px auto;
+        top: 338px;
         &__title {
             width: 62%;
             margin: 0 auto;
@@ -65,21 +70,6 @@
     .category {
         width: 62%;
         margin: 0 auto;
-    }
-
-    .food__checkbox {
-        &:hover ~ .food__slider {
-            transform: translateX(-59px);
-        }
-        &:hover ~ .food__price {
-            transform: translateX(-59px);
-        }
-        &:hover ~ .food__title {
-            width: 68%;
-        }
-        &:hover ~ .food__description {
-            width: 68%;
-        }
     }
 
     .footer {
@@ -94,23 +84,6 @@
         &__img {
             order: 5;
             margin: 0 35px 0 60px;
-        }
-    }
-}
-
-@media (max-width: 1439px) {
-    .food__checkbox {
-        &:checked ~ .food__slider {
-            transform: translateX(-59px);
-        }
-        &:checked ~ .food__price {
-            transform: translateX(-59px);
-        }
-        &:checked ~ .food__title {
-            width: 68%;
-        }
-        &:checked ~ .food__description {
-            width: 68%;
         }
     }
 }
