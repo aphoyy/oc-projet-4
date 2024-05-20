@@ -53,8 +53,8 @@
   margin-bottom: 9px;
   filter: invert(99%) sepia(0%) saturate(0%) hue-rotate(225deg) brightness(108%) contrast(100%);
 }
-.footer__text {
-  margin-top: 7px;
+.footer__text, .footer__link {
+  margin: 5px 0;
 }
 .footer__logo {
   font-size: 13px;
@@ -112,6 +112,7 @@
   background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
 }
 
+/* Overflow container */
 .overflow-container {
   position: relative;
   overflow-x: hidden;

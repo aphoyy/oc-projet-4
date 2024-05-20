@@ -10,8 +10,8 @@
         margin-bottom: 9px;
         filter: invert(99%) sepia(0%) saturate(0%) hue-rotate(225deg) brightness(108%) contrast(100%)
     }
-    &__text {
-        margin-top: 7px;
+    &__text, &__link {
+        margin: 5px 0;
     }
     &__logo {
         font-size: 13px;
