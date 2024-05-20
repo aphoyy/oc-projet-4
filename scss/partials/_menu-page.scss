@@ -27,10 +27,7 @@
     &__button {
         margin: 40px auto 0 auto;
         height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
+        @include variables.flex-center;
         .button {
             width: 186px;
             padding: 13px 50px;
@@ -74,8 +71,8 @@
     margin-top: 12px;
     border-radius: 15px;
     background-color: variables.$white;
-    box-shadow: 0px 4.01px 15.04px 0px #0000001A;
     overflow: hidden;
+    @include variables.shadow;
     animation: food-slide variables.$food-delay cubic-bezier(0,.8,.37,.75) both;
     @for $i from 1 through variables.$food-max {
         &--#{$i} {
@@ -131,6 +128,7 @@
         right: 15px;
         transition: transform 300ms ease-in-out;
         transform-origin: right;
+        z-index: -1;
     }
     &__slider {
         position: absolute;
@@ -143,9 +141,8 @@
         background-color: variables.$green;
         transition: transform 300ms ease-in-out;
         transform-origin: right;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        z-index: -1;
+        @include variables.flex-center;
     }
     &__checkmark {
         width: 20px;
