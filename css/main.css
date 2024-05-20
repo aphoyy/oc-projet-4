@@ -112,6 +112,11 @@
   background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
 }
 
+.overflow-container {
+  position: relative;
+  overflow-x: hidden;
+}
+
 /* Loader */
 .load-container {
   animation: loading-hidden 0ms both 1480ms;
@@ -566,7 +571,6 @@
 body {
   width: 100%;
   height: auto;
-  overflow-x: hidden;
 }
 
 h2 {

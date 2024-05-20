@@ -1,5 +1,10 @@
 @use './variables';
 
+.overflow-container {
+    position: relative;
+    overflow-x: hidden;
+}
+
 /* Loader */
 .load-container {
     animation: loading-hidden 0ms both 1480ms;
@@ -97,7 +102,7 @@
     }
     &__img {
         width: 100%;
-        height: 174px; //174px
+        height: 174px;
         border-radius: 15px 15px 0 0;
         object-fit: cover;
     }
