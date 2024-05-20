@@ -499,8 +499,11 @@
     padding: 64px 0 31px 0;
   }
   .footer__text, .footer__link {
-    margin-left: 40px;
+    margin-left: 18px;
     margin-top: 0;
+  }
+  .footer__text:nth-of-type(3) {
+    margin-left: 40px;
   }
   .footer__link {
     font-size: 16px;
